@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -22,29 +21,29 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?=BASE_URL.DS.'pages'.DS?>">PLAN Qrcode</a>
+          <a class="navbar-brand" href="<?=BASE_URL.DS.'accueil'.DS?>">PLAN Qrcode</a>
         </div>
  
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="<?=$pageAccueil?>"><a href="<?=BASE_URL.DS.'pages'.DS?>">Accueil</a></li>
-            <li class="<?=$pageContact?>"><a href="<?=BASE_URL.DS.'pages'.DS?>contact/">Contact</a></li>
+            <li class="<?=$pageAccueil?>"><a href="<?=BASE_URL.DS?>accueil">Accueil</a></li>
+            <li class="<?=$pageContact?>"><a href="<?=BASE_URL.DS?>contact">Contact</a></li>
             <?php if(isset($_SESSION['user']['name'])): ?>
                   
-            <li class="<?=$pageGenererQRCode?>"><a href="<?=BASE_URL.DS.'pages'.DS?>generateqrcode/">Générer son QRCode</a></li>
-            <li class="<?=$pageQrcode?>"><a href="<?=BASE_URL.DS.'pages'.DS?>myqrcode/">Mes QRCode</a></li>
+            <li class="<?=$pageGenererQRCode?>"><a href="<?=BASE_URL.DS?>generateqrcode">Générer son QRCode</a></li>
+            <li class="<?=$pageQrcode?>"><a href="<?=BASE_URL.DS?>myqrcode">Mes QRCode</a></li>
             
           </ul>        
                   <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Salut <b><?=$_SESSION['user']['name']?></b></a></li>
-                    <li><a href="<?=BASE_URL.DS.'pages'.DS.'disconnect'?>">&raquo;  Déconnexion</a></li>
+                    <li><a href="<?=BASE_URL.DS.'accueil'.DS.'disconnect'?>">&raquo;  Déconnexion</a></li>
                   </ul>
             
             <?php else: ?>
-            <li class="<?=$pageInscription?>"><a href="<?=BASE_URL.DS.'pages'.DS?>signup">Inscription</a></li>
+            <li class="<?=$pageInscription?>"><a href="<?=BASE_URL.DS?>signup">Inscription</a></li>
             </ul>
-            <form class="navbar-form navbar-right" method="POST" action='<?=BASE_URL.DS.'pages'.DS?>'>
+            <form class="navbar-form navbar-right" method="POST" action='<?=BASE_URL.DS?>accueil'>
               <div class="form-group">
                 <input type="text" placeholder="Email" class="form-control" value='laurent@ufr.fr' name='login'>
               </div>

@@ -57,14 +57,14 @@ class Model{
 	}
 	public function add($req){
 		$sql = "INSERT INTO qrcode.users (id, name, email, password) VALUES (NULL, '".$_POST['name']."', '".$_POST['email']."', '".md5($_POST['password'])."')";
-		//SELECT * FROM '.$this->table.' as '.get_class($this).' ';
-		/*
-		if(isset($req['condition'])){
-			$sql .= 'WHERE '.$req['condition'];
-		}
-		*/
 		$pre = $this->db->prepare($sql);
 		$pre->execute();
-
 	}
+	public function del($id){
+		$sql = "DELETE FROM qrcode.myqrcodes WHERE myqrcodes.id = '".$id."'";
+		$pre = $this->db->prepare($sql);
+		$pre->execute();
+	}
+
+	
 }
