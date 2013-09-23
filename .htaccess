@@ -1,0 +1,4 @@
+# Nous mettons la réécruture d'URL en route
+RewriteEngine On
+# Nous redirigons tout vers webroot
+RewriteRule (.*) webroot/$1 [L]

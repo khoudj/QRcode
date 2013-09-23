@@ -1,0 +1,9 @@
+# Nous mettons la réécruture d'URL en route
+RewriteEngine On
+# Si nous n'attegnons pas un dossier
+RewriteCond %{REQUEST_FILENAME} !-d
+# Si nous n'attegnons pas un fichier
+RewriteCond %{REQUEST_FILENAME} !-f
+# Nous redirignons vers index.php avec les paramêtres 
+# [L] Est un flag qui dit que c'est la dernière règle à utiliser
+RewriteRule (.*) index.php/$1 [L]
