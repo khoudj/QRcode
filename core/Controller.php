@@ -48,6 +48,20 @@ class Controller{
 		require ROOT.DS.'view'.DS.'layout'.DS.$this->layout.'.php';
 		$this->rendered = true;
 	}
+
+		/**
+	*	Fonction render() permet de faire un rendu dans la vue.
+	*	$filname contient le nom du fichier de la vue à inclure
+	*	@param string $filname
+	*/
+	public function printqrcode($view){
+
+		// extraction des variables avant l'envoie à la vue
+		extract($this->vars);
+		// 
+		require ROOT.DS.'view'.DS.'layout'.DS.'printqrcode.php';
+
+	}
 	
 	/**
 	*	Fonction set() permet de pousser les variables à envoyer à la vue dans $this->vars
