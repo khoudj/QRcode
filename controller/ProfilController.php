@@ -33,8 +33,7 @@ class ProfilController extends Controller{
 			'pageGenererQRCode'=>'',
 			'pageContact'=>'',
 			'pageQrcode'=>'',
-			'pageProfil'=>'active',
-			'pageProfil'=>'')
+			'pageProfil'=>'active')
 		);
 		$this->render('index');
 	}

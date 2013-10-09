@@ -55,6 +55,64 @@ class Model{
 		$pre->execute();
 		return $pre->fetchAll(PDO::FETCH_OBJ);
 	}
+	/**
+	*	Fonction save() permet de sauver des données contenues dans le tableau $data.
+	*	- Si id est défini dans le tableau $data, la fonction fera un UPDATE
+	*	- Si id n'est pas défini dans le tableau $data, la fonction fera un INSERT
+	*	@param : array $data
+	*/
+	function save($data){
+		//Nous testons si id est présent dans $data et qu'il n'est pas vide
+		if(isset($data['id']) && !empty($data['id'])){
+			// id existe, nous ferons un UPDATE sur la table défini à l'instanciation de l'objet
+			$sql = "UPDATE ".$this->table." SET ";
+			die($this->table);
+			// nous faisons une boucle pour mettre à jour les champs
+			foreach ($data as $key => $value) {
+				// Inutile de mettre à jour l'id
+				if($key!='id'){
+					$sql .= "$key='$value',";
+				}
+			}
+			// Nous devons supprimer la dernière ","
+			$sql = substr($sql,0,-1);
+			// Nous spécifions la condition
+			$sql .= " WHERE id=".$data['id'];
+		}else{
+			// id n'existe pas, nous ferons un INSERT
+			$sql = "INSERT INTO ".$this->table." (";
+			// id est présent dans $data mais il est vide, il faut donc le supprimer
+			unset($data['id']);
+			// Nous partourons le tableau de data en boucle pour préciser les champs
+			foreach ($data as $key => $value) {
+				$sql .= "$key,";
+			}
+			// Nous devons supprimer la dernière  ","
+			$sql = substr($sql,0,-1);
+
+			$sql .= ") VALUES("; 
+			// Nous partourons le tableau de data en boucle pour préciser les valeurs
+			foreach ($data as $value) {
+				$sql .= "'$value',";
+			}
+			// Nous devons supprimer la dernière  ","
+			$sql = substr($sql,0,-1);
+			// Nous spécifions la condition
+			$sql .= ")";
+		}
+		// Nous lançons la requête 
+		$pre = $this->db->prepare($sql);
+		$pre->execute();
+		// Nous récupérons l'id en fonction de la requête
+		if(!isset($data['id'])){
+			// si c'est une nouvelle entrée, nous récupérons l'id créé
+			$this->id = $this->db->lastInsertId();
+		}else{
+			// si c'est une mise à jour, nous récupérons l'id envoyé dans $data ($_POST['id'])
+			$this->id = $data['id'];
+		}
+	}
+
 	public function add($req){
 		$sql = "INSERT INTO qrcode.users (id, name, email, password) VALUES (NULL, '".$_POST['name']."', '".$_POST['email']."', '".md5($_POST['password'])."')";
 		$pre = $this->db->prepare($sql);
@@ -65,6 +123,4 @@ class Model{
 		$pre = $this->db->prepare($sql);
 		$pre->execute();
 	}
-
-	
 }

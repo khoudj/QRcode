@@ -7,14 +7,14 @@
 
 <div class="row">
 	<div class="col-md-6">
-		<h2>Tenté ? alors inscris-toi !</h2>
+		<h2>Manage ton profil</h2>
     <?php
   if(isset($alert)){
     $alert = new Alerts($alert);
     $alert->alert();
   } 
 ?>
-      	<form action="<?=BASE_URL.DS?>signup" method="POST" id="formSignup">
+      	<form action="<?=BASE_URL.DS?>signup" method="POST" id="formProfil">
           <div class="input-group">
             <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
             <input type="text" class="form-control" placeholder="Ton prénom" name="name"  pattern="{50}" required />

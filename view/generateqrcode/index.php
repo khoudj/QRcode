@@ -5,9 +5,9 @@
       </div>
     </div>
 <?php 
-	if(isset($_GET['msg'])) {
-			$titre=$_GET['titre'];
-			$msg=$_GET['msg'];
+	if(isset($_POST['msg'])) {
+			$titre=$_POST['titre'];
+			$msg=$_POST['msg'];
 		}else{
 			$titre='';
 			$msg='Entre ton message';
@@ -27,7 +27,7 @@
 	<div class="col-md-6">	
 		<h2>Génère ton QRCode</h2>
 		<p>Génère ton QRCode, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ullam, harum ratione suscipit nostrum blanditiis impedit modi eaque ad consequuntur at in temporibus error! Placeat doloremque ex ullam exercitationem mollitia.</p>	
-		<form role="form" action="<?=BASE_URL.DS?>generateqrcode/" method="GET">
+		<form role="form" action="<?=BASE_URL.DS?>generateqrcode/" method="POST">
 		  <div class="form-group">
 			<label for="titre">Ton titre</label>
 		  	<input type="text" class="form-control" placeholder="ton titre" name="titre" id="titre" required value='<?=$titre?>'/>

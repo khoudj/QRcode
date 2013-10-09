@@ -67,7 +67,11 @@
       </div>
       <hr>
       <footer>
-        <p>&copy; Khoudj - 2013</p>
+            Développement : <a href="=http://www.khoudj.com" targe="_blank" class="navbar-link">Laurent Khoudja</a> | 
+            <a href="http://stgi.univ-fcomte.fr/" target="_blank" class="navbar-link">UFR STGI</a> | 
+            <a href="http://psm-serv.pu-pm.univ-fcomte.fr/" targe="_blank" class="navbar-link">Master 2 PSM Année 2013-14 </a> |
+            <a href="=http://lifc.univ-fcomte.fr/page_personnelle/accueil/44" targe="_blank" class="navbar-link">Unité d'enseignement A. Mostéfaoui</a> 
+            
       </footer>
     </div> <!-- /container -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
