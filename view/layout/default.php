@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="<?=BASE_URL.DS.'css'.DS?>style.css">
 </head>
  <body>
-
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -36,7 +35,7 @@
             
           </ul>        
                   <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Salut <b><?=$_SESSION['user']['name']?></b></a></li>
+                    <li class="<?=$pageProfil?>"><a href="<?=BASE_URL.DS?>profil">Profil > <b><?=$_SESSION['user']['name']?></b></a></li>
                     <li><a href="<?=BASE_URL.DS.'accueil'.DS.'disconnect'?>">&raquo;  Déconnexion</a></li>
                   </ul>
             

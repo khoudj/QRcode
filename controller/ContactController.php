@@ -12,7 +12,8 @@ class ContactController extends Controller{
 			'pageInscription'=>'',
 			'pageGenererQRCode'=>'',
 			'pageContact'=>'active',
-			'pageQrcode'=>'')
+			'pageQrcode'=>'',
+			'pageProfil'=>'')
 		);
 		$this->render('index');
 	}

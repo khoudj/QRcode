@@ -2,7 +2,7 @@
 /**
 *	La classe Controller servira de controleur général
 */
-class MyqrcodeController extends Controller{
+class GetMessageController extends Controller{
 
 
 	function index(){
@@ -14,6 +14,7 @@ class MyqrcodeController extends Controller{
 		// sinon ont crée une alert vide
 			$alert=array();
 		}
+
 
 		$this->loadModel('Myqrcode');
 		$myqrcode = $this->Myqrcode->find(array(

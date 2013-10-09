@@ -37,8 +37,8 @@ class AccueilController extends Controller{
 			'pageInscription'=>'',
 			'pageGenererQRCode'=>'',
 			'pageContact'=>'',
-			'pageQrcode'=>''
-			)
+			'pageQrcode'=>'',
+			'pageProfil'=>'')
 		);
 		$this->render('index');
 	}

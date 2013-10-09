@@ -6,10 +6,8 @@
     </div>
 <?php 
 	if(isset($_GET['msg'])) {
-			$titre=$_GET['titre'];
 			$msg=$_GET['msg'];
 		}else{
-			$titre='';
 			$msg='Entre ton message';
 		} 
 	$msg=base64_encode($msg);
@@ -27,12 +25,12 @@
 	<div class="col-md-6">	
 		<h2>Génère ton QRCode</h2>
 		<p>Génère ton QRCode, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ullam, harum ratione suscipit nostrum blanditiis impedit modi eaque ad consequuntur at in temporibus error! Placeat doloremque ex ullam exercitationem mollitia.</p>	
-		<form role="form" action="<?=BASE_URL.DS?>generateqrcode/" method="GET">
+		<form role="form" action="<?=BASE_URL.DS?>generateqrcode/" method="POST">
 		  <div class="form-group">
 			<label for="titre">Ton titre</label>
-		  	<input type="text" class="form-control" placeholder="ton titre" name="titre" id="titre" required value='<?=$titre?>'/>
+		  	<input type="text" class="form-control" placeholder="ton titre" name="titre" id="titre" required />
 		    <label for="msg">Ton message</label>
-		    <textarea class="form-control" id="msg" name="msg" rows="3" maxlength="250" required><?php echo base64_decode($msg); ?></textarea>
+		    <textarea class="form-control" id="msg" name="msg" rows="3" maxlength="250" required></textarea>
 		  </div>
 		  <p>Génère ou enregistre ton QR CODE</p>
 	  	  <div class="input-group">

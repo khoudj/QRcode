@@ -2,7 +2,7 @@
 /**
 *	La classe Controller servira de controleur général
 */
-class SignupController extends Controller{
+class ProfilController extends Controller{
 
 	function index(){
 		$this->loadModel('User');
@@ -29,11 +29,11 @@ class SignupController extends Controller{
 		// Nous ajoutons à $this->vars les variables à envoyer à la vue
 		$this->set(array(
 			'pageAccueil'=>'',
-			'pageInscription'=>'active',
+			'pageInscription'=>'',
 			'pageGenererQRCode'=>'',
 			'pageContact'=>'',
 			'pageQrcode'=>'',
-			'pageProfil'=>'',
+			'pageProfil'=>'active',
 			'pageProfil'=>'')
 		);
 		$this->render('index');
