@@ -51,7 +51,7 @@
               <div class="form-group">
                 <input type="password" placeholder="Password" class="form-control"  value='' name='password'>
               </div>
-              <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-log-out btn-lg" style="padding:0;margin:0"></span></button>
+              <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-log-out btn-lg padding-off"></span></button>
               </form>
               <?php endif;?>
         </div><!--/.navbar-collapse -->

@@ -24,9 +24,8 @@
 					<!-- QRCode Généré -->
 					<img src="<?php echo BASE_URL.DS.'img'.DS.'qrcode.php?msg='.base64_encode($value->message); ?>" alt="QR CODE généré" /><br />
 					<!-- Liens acction sur QRCode -->
-					<a class="btn btn-success btn-small" href="<?php echo BASE_URL.DS.'img'.DS.'qrcode.php?msg='.base64_encode($value->message); ?>" target="_blank">Ouvrir»</a>
-					<a class="btn btn-primary btn-small" href="<?php echo BASE_URL.DS.'img'.DS.'qrcode.php?msg='.base64_encode($value->message); ?>" target="_blank">Imprimer»</a>
-					<a class="btn btn-danger btn-small" href="<?=BASE_URL.DS?>myqrcode/supprimerqrcode/<?=$value->id?>">Supprimer [X]</a>
+					<a class="btn btn-primary btn-small" href="<?php echo BASE_URL.DS.'img'.DS.'qrcode.php?msg='.base64_encode($value->message); ?>" target="_blank"><span class="glyphicon glyphicon-print btn-lg margin-off padding-off"></span> </a>
+					<a class="btn btn-danger btn-small" href="<?=BASE_URL.DS?>myqrcode/supprimerqrcode/<?=$value->id?>"><span class="glyphicon glyphicon-trash btn-lg margin-off padding-off"></span> </a>
 				</div>
 				<div class="col-lg-6">
 					<div class="form-group">
