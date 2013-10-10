@@ -4,3 +4,17 @@
 .padding-off{
 	padding:0;
 }
+.maringLeft2em{
+	margin-left: 2em;
+}
+.maringLeft1em{
+	margin-left: 1em;
+}
+.pipe{
+	margin-right: 2em;
+	margin-left: 2em;
+	color:#BBF;
+}
+.line{
+	display: inline;
+}
