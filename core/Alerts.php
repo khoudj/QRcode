@@ -12,23 +12,23 @@ class Alerts{
   <hr/>  
   <div class="container">
 	 <div class="bs-example row">
-      <div class="alert alert-block alert-<?=$this->alert['type']?>">
-        <h4><?=$this->alert['title']?></h4>
-        <p><?=$this->alert['message']?></p>
-        <?php if(isset($this->alert['list'])): ?>
-          <ul>
-          	<?php
-          	foreach($this->alert['list'] as $al){
-          	?>
-          		<li><?=$al?></li>
-          	<?php
-         		}
-          	?>
-          </ul>
-          <?php endif; ?>
+      <div class="panel panel-<?=$this->alert['type']?>">
+          <div class="panel-heading"><h3><span class="glyphicon glyphicon-info-sign"></span> <?=$this->alert['title']?></h3></div>
+          <div class="panel-body">
+            <p><?=$this->alert['message']?></p>
+            <?php if(isset($this->alert['list'])): ?>
+              <ul>
+                <?php
+                foreach($this->alert['list'] as $al){
+                ?>
+                  <li><?=$al?></li>
+                <?php
+                }
+                ?>
+              </ul>
+              <?php endif; ?>
+          </div>
       </div>
- 	</div>	
- </div>
  	<?php
  }
 }

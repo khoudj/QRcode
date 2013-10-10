@@ -41,7 +41,6 @@
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
-
 <?php
 	if(isset($alert)){
 		$alert = new Alerts($alert);
@@ -50,7 +49,7 @@
 ?>
     <div class="jumbotron">
       <div class="container">
-        <h1>PLAN.Qrcode</h1>
+        <h1><span class="glyphicon glyphicon-qrcode"></span> PLAN.Qrcode</h1>
         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, accusamus voluptate eos aperiam odio tempora vitae dignissimos mollitia tenetur neque suscipit nemo sint vero. Doloremque quaerat omnis perspiciatis deserunt dolores.</p>
         <p><a class="btn btn-primary btn-small">Comment ça marche &raquo;</a></p>
       </div>

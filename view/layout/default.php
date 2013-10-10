@@ -20,27 +20,29 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?=BASE_URL.DS.'accueil'.DS?>">PLAN Qrcode</a>
+          <a class="navbar-brand" href="<?=BASE_URL.DS.'accueil'.DS?>"><span class="glyphicon glyphicon-qrcode"></span> PLAN Qrcode</a>
         </div>
  
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="<?=$pageAccueil?>"><a href="<?=BASE_URL.DS?>accueil">Accueil</a></li>
-            <li class="<?=$pageContact?>"><a href="<?=BASE_URL.DS?>contact">Contact</a></li>
+            <li class="<?=$pageAccueil?>"><a href="<?=BASE_URL.DS?>accueil"><span class="glyphicon glyphicon-home btn-sm"></span>Accueil</a></li>
+            <li class="<?=$pageContact?>"><a href="<?=BASE_URL.DS?>contact"><span class="glyphicon glyphicon-envelope btn-sm"></span>Contact</a></li>
             <?php if(isset($_SESSION['user']['name'])): ?>
                   
-            <li class="<?=$pageGenererQRCode?>"><a href="<?=BASE_URL.DS?>generateqrcode">Générer son QRCode</a></li>
-            <li class="<?=$pageQrcode?>"><a href="<?=BASE_URL.DS?>myqrcode">Mes QRCode</a></li>
+            <li class="<?=$pageGenererQRCode?>"><a href="<?=BASE_URL.DS?>generateqrcode"><span class="glyphicon glyphicon-flash btn-sm"></span>Générer son QRCode</a></li>
+            <li class="<?=$pageQrcode?>"><a href="<?=BASE_URL.DS?>myqrcode"><span class="glyphicon glyphicon-list btn-sm"></span>Mes QRCode</a></li>
             
           </ul>        
                   <ul class="nav navbar-nav navbar-right">
-                    <li class="<?=$pageProfil?>"><a href="<?=BASE_URL.DS?>profil">Profil > <b><?=$_SESSION['user']['name']?></b></a></li>
-                    <li><a href="<?=BASE_URL.DS.'accueil'.DS.'disconnect'?>">&raquo;  Déconnexion</a></li>
+                    <li class="<?=$pageProfil?>">
+                      <a href="<?=BASE_URL.DS?>profil"><span class="glyphicon glyphicon-user btn-sm"></span>[ <b> <?=$_SESSION['user']['name']?></b> ] </a>
+                    </li>
+                    <li><a href="<?=BASE_URL.DS.'accueil'.DS.'disconnect'?>">Déconnexion<span class="glyphicon glyphicon-log-out btn-sm"></span></a></li>
                   </ul>
             
             <?php else: ?>
-            <li class="<?=$pageInscription?>"><a href="<?=BASE_URL.DS?>signup">Inscription</a></li>
+            <li class="<?=$pageInscription?>"><a href="<?=BASE_URL.DS?>signup"><span class="glyphicon glyphicon-pencil btn-sm"></span>Inscription</a></li>
             </ul>
             <form class="navbar-form navbar-right" method="POST" action='<?=BASE_URL.DS?>accueil'>
               <div class="form-group">
@@ -49,7 +51,7 @@
               <div class="form-group">
                 <input type="password" placeholder="Password" class="form-control"  value='' name='password'>
               </div>
-              <button type="submit" class="btn btn-success">go</button>
+              <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-log-out btn-lg" style="padding:0;margin:0"></span></button>
               </form>
               <?php endif;?>
         </div><!--/.navbar-collapse -->
