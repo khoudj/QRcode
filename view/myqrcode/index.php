@@ -11,7 +11,14 @@
   ?>
 
 <div class="container">
-	<h1>Mes QR-CODE enregistrés</h1>
+	<h1 class="margin-off">Mes QR-CODE enregistrés</h1>
+	<p class="text-right">
+		<a href="" title="Titre ordre alphabétique v"><span class="glyphicon glyphicon-sort-by-alphabet btn-lg margin-off padding-off"></span></a><span class="pipeOrder"></span>
+		<a href="" title="Titre ordre alphabétique ^"><span class="glyphicon glyphicon-sort-by-alphabet-alt btn-lg margin-off padding-off"></span></a><span class="pipeOrder"></span>
+		<a href="" title="Date ordre V"><span class="glyphicon glyphicon-sort-by-attributes btn-lg margin-off padding-off"></span></a><span class="pipeOrder"></span>
+		<a href="" title="Date ordre ^"><span class="glyphicon glyphicon-sort-by-attributes-alt btn-lg margin-off padding-off"></span></a>
+
+	</p>
 <form role="form" action="<?=BASE_URL.DS?>myqrcode" method="POST">
 <?php 
 	// Génération d'ID unique et de clé pour les valeurs POST sous forme de tableau
@@ -45,11 +52,6 @@
 
 		  </div>
 		</div>
-
-		<div class="row">
-
-		</div>
-		<hr/>
 		<?php
 	};
 	?>
