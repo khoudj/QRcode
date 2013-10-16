@@ -3,8 +3,6 @@
 *	La classe Controller servira de controleur général
 */
 class MyqrcodeController extends Controller{
-
-
 	function index(){
 		// si une alert est envoyée en argument, on la récupère
 		if(func_get_args()){
@@ -34,9 +32,11 @@ class MyqrcodeController extends Controller{
 			$this->set(array('alert'=>$alert));
 		}
 		$this->render('index');
+		
 	}
 
 	function supprimerqrcode($id){
+		
 		$this->loadModel('Myqrcode');
 		$this->Myqrcode->del($id);
 
@@ -46,6 +46,7 @@ class MyqrcodeController extends Controller{
 					'message'	=>'Votre QR Code a bien été supprimé'
 					);
 		$this->index($alert);
+		
 	}
 }	
 ?>
