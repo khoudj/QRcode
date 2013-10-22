@@ -51,6 +51,9 @@ class Model{
 		if(isset($req['condition'])){
 			$sql .= 'WHERE '.$req['condition'];
 		}
+		if(isset($req['order'])){
+			$sql .= $req['order'];
+		}
 		$pre = $this->db->prepare($sql);
 		$pre->execute();
 		return $pre->fetchAll(PDO::FETCH_OBJ);

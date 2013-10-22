@@ -1,6 +1,8 @@
  <?php
 /**
 *	La classe Controller servira de controleur général
+*
+*	@author : Laurent Khoudja - laurentkh@gmail.com - M2 PSM - UFR STGI
 */
 class GenerateqrcodeController extends Controller{
 
@@ -36,6 +38,7 @@ class GenerateqrcodeController extends Controller{
 						);
 					// préparation des données pour la vue
 					$this->set(array('alert'=>$alert));
+					// ID du QRCode  : $this->Myqrcode->id;
 				// si le qrcode est ni généré, ni sauvegardé, on envoie un flash d'erreur
 				}else{
 					// création du message flash d'erreur
@@ -45,7 +48,7 @@ class GenerateqrcodeController extends Controller{
 						'message'	=>'<p>Cochez le choix de votre action dans les checkbox :</p>'."\n".'<ul>'."\n".'<li>Générer</li>'."\n".'<li>Sauvegarder</li>'."\n".'</ul>'."\n"
 						);
 					// préparation des données pour la vue
-					$this->set(array('alert'=>$alert));
+					$this->Myqset(array('alert'=>$alert));
 				}
 			}
 		// Nous ajoutons à $this->vars les variables à envoyer à la vue

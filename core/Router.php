@@ -1,8 +1,10 @@
 <?php
 /**
-*	La classe Routeur servira à récupérer le controleur, l'action et les paramêtres de l'URL et les mettra dans les paramêtre du request
+*	La classe Routeur servira à récupérer le controleur, l'action et les paramêtres de l'URL et les mettra dans les paramêtres du request
 *	Se sera une class globale qui ne sera pas instanciée. 
 *	Ces paramêtres et méthodes seront donc static
+*
+*	@author : Laurent Khoudja - laurentkh@gmail.com - M2 PSM - UFR STGI
 */
 class Router{
 	//	URL appelé par l'utilisateur

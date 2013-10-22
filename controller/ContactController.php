@@ -1,6 +1,8 @@
  <?php
 /**
 *	La classe Controller servira de controleur général
+*
+*	@author : Laurent Khoudja - laurentkh@gmail.com - M2 PSM - UFR STGI
 */
 class ContactController extends Controller{
 

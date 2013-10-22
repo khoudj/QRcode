@@ -13,10 +13,10 @@
 <div class="container">
 	<h1 class="margin-off">Mes QR-CODE enregistrés</h1>
 	<p class="text-right">
-		<a href="" title="Titre ordre alphabétique v"><span class="glyphicon glyphicon-sort-by-alphabet btn-lg margin-off padding-off"></span></a><span class="pipeOrder"></span>
-		<a href="" title="Titre ordre alphabétique ^"><span class="glyphicon glyphicon-sort-by-alphabet-alt btn-lg margin-off padding-off"></span></a><span class="pipeOrder"></span>
-		<a href="" title="Date ordre V"><span class="glyphicon glyphicon-sort-by-attributes btn-lg margin-off padding-off"></span></a><span class="pipeOrder"></span>
-		<a href="" title="Date ordre ^"><span class="glyphicon glyphicon-sort-by-attributes-alt btn-lg margin-off padding-off"></span></a>
+		<a href="<?=BASE_URL.DS?>myqrcode/?titleASC" title="Titre ordre alphabétique v"><span class="glyphicon glyphicon-sort-by-alphabet btn-lg margin-off padding-off"></span></a><span class="pipeOrder"></span>
+		<a href="<?=BASE_URL.DS?>myqrcode/?titleDESC" title="Titre ordre alphabétique ^"><span class="glyphicon glyphicon-sort-by-alphabet-alt btn-lg margin-off padding-off"></span></a><span class="pipeOrder"></span>
+		<a href="<?=BASE_URL.DS?>myqrcode/?createdASC" title="Date ordre V"><span class="glyphicon glyphicon-sort-by-attributes btn-lg margin-off padding-off"></span></a><span class="pipeOrder"></span>
+		<a href="<?=BASE_URL.DS?>myqrcode/?createdDESC" title="Date ordre ^"><span class="glyphicon glyphicon-sort-by-attributes-alt btn-lg margin-off padding-off"></span></a>
 
 	</p>
 <form role="form" action="<?=BASE_URL.DS?>myqrcode" method="POST">
@@ -28,7 +28,8 @@
 		?>
 		<div class="panel panel-default">
 		  <div class="panel-heading">
-		    <h2 class="panel-title"><?=$value->title?></h2>
+		    <h2 class="panel-title text-left col-md-6 blue"><?=$value->title?></h2>
+			<h3 class="panel-title text-right .col-md-6 grey"><?='Crée le '.DateFormat::format($value->created)?><? if($value->modified) echo '<span class="pipeDate">|</span>Modifié le '.DateFormat::format($value->modified); ?></h3>
 		  </div>
 		  <div class="panel-body">
 		  	<div class="col-lg-6">
@@ -46,9 +47,9 @@
 		 		</div>
 		  </div>
 		  <div class="panel-footer">
-		    <a class="btn btn-success btn-small maringLeft2em" href="<?php echo BASE_URL.DS.'img'.DS.'qrcode.php?msg='.base64_encode($value->message); ?>" target="_blank"><span class="glyphicon glyphicon-pencil btn-lg margin-off padding-off"></span></a>
-		  	<a class="btn btn-primary btn-small maringLeft1em" href="<?php echo BASE_URL.DS.'img'.DS.'qrcode.php?msg='.base64_encode($value->message); ?>" target="_blank"><span class="glyphicon glyphicon-print btn-lg margin-off padding-off"></span> </a>
-			<a class="btn btn-danger btn-small maringLeft1em" href="<?=BASE_URL.DS?>myqrcode/supprimerqrcode/<?=$value->id?>"><span class="glyphicon glyphicon-trash btn-lg margin-off padding-off"></span> </a>
+		    <a class="btn btn-success btn-small maringLeft2em" href="<?=BASE_URL.DS?>myqrcode/modifierqrcode/<?=$value->id?>" title="Modifier"><span class="glyphicon glyphicon-pencil btn-lg margin-off padding-off"></span></a>
+		  	<a class="btn btn-primary btn-small maringLeft1em" href="<?php echo BASE_URL.DS.'img'.DS.'qrcode.php?msg='.base64_encode($value->message); ?>" target="_blank" title="imprimer"><span class="glyphicon glyphicon-print btn-lg margin-off padding-off"></span> </a>
+			<a class="btn btn-danger btn-small maringLeft1em" href="<?=BASE_URL.DS?>myqrcode/supprimerqrcode/<?=$value->id?>" title="Supprimer"><span class="glyphicon glyphicon-trash btn-lg margin-off padding-off"></span> </a>
 
 		  </div>
 		</div>
