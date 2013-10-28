@@ -70,10 +70,11 @@
       <hr>
       <footer>
         <div class="well">
-            <h3 class="line"><span class="glyphicon glyphicon-qrcode btn-lg padding-off"></span> PLAN Qrcode</a></h3><span class="pipe"></span>
-            <a href="=http://www.khoudj.com" targe="_blank" class="navbar-link"><span class="glyphicon glyphicon-wrench"></span> Laurent Khoudja</a><span class="pipe">|</span>
+            <h3 class="line"><span class="glyphicon glyphicon-qrcode btn-lg padding-off"></span> PLAN Qrcode</h3><span class="pipe"></span>
+            <a href="http://www.khoudj.com" target="_blank" class="navbar-link"><span class="glyphicon glyphicon-wrench"></span> Laurent Khoudja</a><span class="pipe">|</span>
             <a href="http://stgi.univ-fcomte.fr/" target="_blank" class="navbar-link"><span class="glyphicon glyphicon-home"></span>  UFR STGI</a><span class="pipe">|</span>
-            <a href="http://psm-serv.pu-pm.univ-fcomte.fr/" targe="_blank" class="navbar-link"><span class="glyphicon glyphicon-link"></span> Master 2 PSM Année 2013-14 </a><span class="pipe">|</span>            <a href="=http://lifc.univ-fcomte.fr/page_personnelle/accueil/44" targe="_blank" class="navbar-link"><span class="glyphicon glyphicon-pencil"></span> Unité d'enseignement A. Mostéfaoui</a> 
+            <a href="http://psm-serv.pu-pm.univ-fcomte.fr/" target="_blank" class="navbar-link"><span class="glyphicon glyphicon-link"></span> Master 2 PSM Année 2013-14 </a><span class="pipe">|</span>
+            <a href="http://lifc.univ-fcomte.fr/page_personnelle/accueil/44" target="_blank" class="navbar-link"><span class="glyphicon glyphicon-pencil"></span> Unité d'enseignement A. Mostéfaoui</a> 
         </div>
       </footer>
     </div> <!-- /container -->

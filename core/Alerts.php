@@ -43,6 +43,8 @@ class Alerts{
               <?php endif; ?>
           </div>
       </div>
+    </div>
+   </div>
  	<?php
  }
 }

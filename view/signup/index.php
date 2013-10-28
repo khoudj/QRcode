@@ -4,16 +4,16 @@
         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, accusamus voluptate eos aperiam odio tempora vitae dignissimos mollitia tenetur neque suscipit nemo sint vero. Doloremque quaerat omnis perspiciatis deserunt dolores.</p>
       </div>
     </div>
-
-<div class="row">
-	<div class="col-md-6">
-		<h2>Tenté ? alors inscris-toi !</h2>
-    <?php
+  <?php
   if(isset($alert)){
     $alert = new Alerts($alert);
     $alert->alert();
   } 
-?>
+  ?>
+<div class="row">
+	<div class="col-md-6">
+		<h2>Tenté ? alors inscris-toi !</h2>
+
       	<form action="<?=BASE_URL.DS?>signup" method="POST" id="formSignup">
           <div class="input-group">
             <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
@@ -23,6 +23,16 @@
           <div class="input-group">
             <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
             <input type="email" class="form-control" placeholder="email@fai.com" name="email" required />
+          </div>
+          <br />
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
+            <input type="tel" class="form-control" placeholder="06..." name="phone" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" required/>
+          </div>
+          <br />
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></span>
+            <textarea class="form-control profil" placeholder="Ton profil ..." name="profil" required></textarea>
           </div>
           <br />
           <div class="input-group">
