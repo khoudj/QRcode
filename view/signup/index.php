@@ -57,6 +57,9 @@
               <li>Ton prénom</li>
               <li>Ton email</li>
               <li>Pass : 8 caracères mini, 15 maxi, non accentués, des chiffres ainsi que  - et _</li>
+              <li>Ton numéro de téléphone</li>
+              <li>Ton profil</li>
             </ul>
+            <p>Tous ces champs sont obligatoires.</p>
     </div>
 </div>

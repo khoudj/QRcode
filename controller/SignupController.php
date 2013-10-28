@@ -8,7 +8,7 @@ class SignupController extends Controller{
 
 	function index(){
 		$this->loadModel('User');
-		if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password2']) ){
+		if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password2']) && isset($_POST['phone']) && isset($_POST['profil']) ){
 			if($_POST['password'] != $_POST['password2']){
 				$alert = array(
 					'type'		=>'danger',
@@ -22,7 +22,9 @@ class SignupController extends Controller{
 					'title'		=>'Bienvenu parmis nous '.$_POST['name'],
 					'message'	=>'Vous êtes maintenant inscrit, vous pouvez vous connecter avec vos identifiant et profiter de notre service',
 					);
-				$user = $this->User->add($_POST);
+				// Debug
+				// die(print_r($_POST));
+				$user = $this->User->save($_POST);
 			}
 			$this->set(array('alert'=>$alert));
 		}

@@ -86,6 +86,8 @@ class Model{
 			$sql = "INSERT INTO ".$this->table." (";
 			// id est présent dans $data mais il est vide, il faut donc le supprimer
 			unset($data['id']);
+			// suppression du password2
+			unset($data['password2']);
 			// Nous partourons le tableau de data en boucle pour préciser les champs
 			foreach ($data as $key => $value) {
 				$sql .= "$key,";
@@ -95,14 +97,20 @@ class Model{
 
 			$sql .= ") VALUES("; 
 			// Nous partourons le tableau de data en boucle pour préciser les valeurs
-			foreach ($data as $value) {
-				$sql .= "'$value',";
+			foreach ($data as $key => $value) {
+				if($key=='password'){ 
+					$sql .= "'".md5($value)."',";
+				}else{
+					$sql .= "'$value',";
+				}
 			}
 			// Nous devons supprimer la dernière  ","
 			$sql = substr($sql,0,-1);
 			// Nous spécifions la condition
 			$sql .= ")";
 		}
+		// debug
+		// die($sql);
 		// Nous lançons la requête 
 		$pre = $this->db->prepare($sql);
 		$pre->execute();
