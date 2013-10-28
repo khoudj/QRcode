@@ -50,6 +50,23 @@ class Controller{
 	}
 
 
+
+	/**
+	*	Fonction renderSignup() permet de faire un rendu dans la vue signup.
+	*/
+	public function renderSignup(){
+		//	Nous testons si la vue à déjà été rendue
+		//	si oui, nous arrétons la pour ne pas la rendre deux foix
+		// Nous testons pour savoir si il y a un / en début de chaine qui correspond à une erreur 404
+		extract($this->vars);
+		$view = ROOT.DS.'view'.DS.'signup'.DS.'index.php';
+		ob_start();
+		require $view; 
+		$content_for_layout=ob_get_clean();
+		require ROOT.DS.'view'.DS.'layout'.DS.$this->layout.'.php';
+		$this->rendered = true;
+	}
+
 	/**
 	*	Fonction set() permet de pousser les variables à envoyer à la vue dans $this->vars
 	*	@param string ou array $key 

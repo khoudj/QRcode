@@ -52,7 +52,7 @@ class MyqrcodeController extends Controller{
 	function supprimerqrcode($id){
 		
 		$this->loadModel('Myqrcode');
-		$this->Myqrcode->del($id);
+		$this->Myqrcode->delOneQRcode($id);
 
 		$alert= array(
 					'type'		=>'info',

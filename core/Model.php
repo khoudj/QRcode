@@ -67,9 +67,11 @@ class Model{
 	function save($data){
 		//Nous testons si id est présent dans $data et qu'il n'est pas vide
 		if(isset($data['id']) && !empty($data['id'])){
+			// suppression de action
+			unset($data['action']);
 			// id existe, nous ferons un UPDATE sur la table défini à l'instanciation de l'objet
 			$sql = "UPDATE ".$this->table." SET ";
-			die($this->table);
+			//die($this->table);
 			// nous faisons une boucle pour mettre à jour les champs
 			foreach ($data as $key => $value) {
 				// Inutile de mettre à jour l'id
@@ -110,7 +112,7 @@ class Model{
 			$sql .= ")";
 		}
 		// debug
-		// die($sql);
+		//die($sql);
 		// Nous lançons la requête 
 		$pre = $this->db->prepare($sql);
 		$pre->execute();
@@ -124,14 +126,25 @@ class Model{
 		}
 	}
 
-	public function add($req){
-		$sql = "INSERT INTO qrcode.users (id, name, email, password) VALUES (NULL, '".$_POST['name']."', '".$_POST['email']."', '".md5($_POST['password'])."')";
+	public function delUser($id){
+
+		$sql = "DELETE FROM users WHERE id = '".$id."'";
 		$pre = $this->db->prepare($sql);
+		//die($sql);
 		$pre->execute();
 	}
-	public function del($id){
-		$sql = "DELETE FROM qrcode.myqrcodes WHERE myqrcodes.id = '".$id."'";
+	public function delUserQRcodes($id){
+
+		$sql = "DELETE FROM myqrcodes WHERE user= '".$id."'";
 		$pre = $this->db->prepare($sql);
+		//die($sql);
+		$pre->execute();
+	}
+	public function delOneQRcode($id){
+
+		$sql = "DELETE FROM myqrcodes WHERE id = '".$id."'";
+		$pre = $this->db->prepare($sql);
+		//die($sql);
 		$pre->execute();
 	}
 }
