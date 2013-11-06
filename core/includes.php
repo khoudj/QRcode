@@ -1,4 +1,5 @@
 <?php
+// Inclusions des éléments du projet
 require ROOT.DS.'config'.DS.'conf.php';
 require 'Router.php';
 require 'Request.php';

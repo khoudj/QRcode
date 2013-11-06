@@ -1,12 +1,31 @@
 <?php
+/**
+* Classe permettant de faire apparaître les messages flash
+* d'erreurs ou d'info.
+* Elle contient un paramêtre > $alert qui est un tableau :
+*   $alert['type']    > type de message. Ceci servira à coloré la boite de dialogue
+*                       et d'afficher l'icone correspondant
+*   $alert['title']   > Contient le titre de l'alert 
+*   $alert['message'] > Contient le message de l'alert 
+*   $alert['list']    > Contient la liste des erreurs sous forme de tableau
+*
+* @author : Laurent Khoudja - laurentkh@gmail.com - M2 PSM - UFR STGI
+*/
 class Alerts{
 
   public $alert;
-
+  /**
+  * Constructeur de la classe
+  * permet de donner la valeur transmise à l'objet au paramètre $alert
+  */
   public function __construct($tabAlert){
     $this->alert = $tabAlert;
   }
 
+  /**
+  * Classe principale
+  * permet d'afficher l'alert en fonction des paramètres dans $alert
+  */
 	public function alert(){
     switch ($this->alert['type']){
       case 'success':

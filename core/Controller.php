@@ -1,9 +1,11 @@
 <?php
 /**
 *	La classe Controller servira de controleur général
+*
+* 	@author : Laurent Khoudja - laurentkh@gmail.com - M2 PSM - UFR STGI
 */
 class Controller{
-	// objet contenant la request
+	// objet contenant la request (L'URI)
 	public $request;
 	// Layout pour rendre la vue
 	public $layout 	= 'default';
@@ -24,7 +26,7 @@ class Controller{
 	/**
 	*	Fonction render() permet de faire un rendu dans la vue.
 	*	$filname contient le nom du fichier de la vue à inclure
-	*	@param string $filname
+	*	@param string contient le nom de la vue
 	*/
 	public function render($view){
 		//	Nous testons si la vue à déjà été rendue
@@ -42,10 +44,15 @@ class Controller{
 			// Nous rendons une vues "standard"
 			$view = ROOT.DS.'view'.DS.$this->request->controller.DS.$view.'.php';
 		}
+		// Début de buffer
 		ob_start();
+		// include de la vue
 		require $view; 
+		//	enregistrement du buffer dans une variable pour affichage dans la vue
 		$content_for_layout=ob_get_clean();
+		//	Include de la vue
 		require ROOT.DS.'view'.DS.'layout'.DS.$this->layout.'.php';
+		//	Nous spécifions que le vue est rendue (cf test plus haut)
 		$this->rendered = true;
 	}
 
@@ -57,13 +64,22 @@ class Controller{
 	public function renderSignup(){
 		//	Nous testons si la vue à déjà été rendue
 		//	si oui, nous arrétons la pour ne pas la rendre deux foix
-		// Nous testons pour savoir si il y a un / en début de chaine qui correspond à une erreur 404
+		if($this->rendered){ 
+			return false;
+		}
+		// extraction des variables avant l'envoie à la vue
 		extract($this->vars);
+		//	définition du chemin de la vue
 		$view = ROOT.DS.'view'.DS.'signup'.DS.'index.php';
+		//	Début du buffer
 		ob_start();
+		//	Include de la vue
 		require $view; 
+		//	Enregistrement du buffer dans une variable pour affichage dans la vue
 		$content_for_layout=ob_get_clean();
+		//	Include de la vue
 		require ROOT.DS.'view'.DS.'layout'.DS.$this->layout.'.php';
+		//	Nous spécifions que le vue est rendue (cf test plus haut)	
 		$this->rendered = true;
 	}
 
@@ -90,7 +106,7 @@ class Controller{
 		$file = ROOT.DS.'model'.DS.$name.'.php';
 		// Nous incluons le fichier du model
 		require_once($file);
-		// Nous testons si $name a déjà été instancier précédamment pour éviter de l'instancier plusieurs fois
+		// Nous testons si $name a déjà été instancié précédemment pour éviter de l'instancier plusieurs fois
 		if(!isset($this->$name)){
 			// Nous instancions la class du model $name
 			$this->$name = new $name;

@@ -1,34 +1,38 @@
 <?php
 /**
 *	La classe Model servira de modèle général
+* 	@author : Laurent Khoudja - laurentkh@gmail.com - M2 PSM - UFR STGI
 */
 class Model{
+	//	Contient les informations pour la connexion
 	static $connection = array();
-
+	//	Contient la configuration
 	public $conf = 'default';
+	//	Contient le nom de la table
 	public $table = false;
+	//	Contient la connexion à la base
 	public $db;
 
 	/**
 	*	Constructeur de Model
 	*/
 	public function __construct(){
-		// connexion à la base
+		// connection à la base
 		// Variable de Config
 		$conf = (Conf::$databases[$this->conf]);
-		// Nous testons si la base à déjà été chargée
+		// Nous testons si la base a déjà été chargée
 		if(isset(Model::$connection[$this->conf])){
 			$this->db = Model::$connection[$this->conf];
 			return true;
 		}
 
 		try{
-			// création de la connexion
+			// création de la connexion grâce à PDO
 			$pdo = new PDO('mysql:host='.$conf['host'].';dbname='.$conf['database'],
 				$conf['login'],
 				$conf['password'],
 				array(PDO::MYSQL_ATTR_INIT_COMMAND =>'SET NAMES utf8'));
-			// Nous stoquons la connection dans la variable static de connection
+			// Nous stoquons la connexion dans la variable static de connexion
 			Model::$connection[$this->conf] = $pdo;
 			$this->db = $pdo;
 		}catch(PDOException $e){
@@ -41,11 +45,17 @@ class Model{
 			}
 
 		}
-		// Nous initialisons qlq varialbles
+		// Nous initialisons le nom de la table en rajoutant un s à la fin
 		if($this->table ===false){
 			$this->table = strtolower(get_class($this)).'s';
 		}
 	}
+	/**
+	*	Fonction du Read du CRUD 'Create Read Update Delete'
+	*	reçoit les paramètre de la requête, la créer et renvoie la réponse de la base
+	*
+	*
+	*/
 	public function find($req){
 		$sql = 'SELECT * FROM '.$this->table.' as '.get_class($this).' ';
 		if(isset($req['condition'])){
@@ -59,7 +69,8 @@ class Model{
 		return $pre->fetchAll(PDO::FETCH_OBJ);
 	}
 	/**
-	*	Fonction save() permet de sauver des données contenues dans le tableau $data.
+	*	Fonction du Create et Update du CRUD 
+	*	Permet de sauver des données contenues dans le tableau $data.
 	*	- Si id est défini dans le tableau $data, la fonction fera un UPDATE
 	*	- Si id n'est pas défini dans le tableau $data, la fonction fera un INSERT
 	*	@param : array $data
@@ -125,7 +136,10 @@ class Model{
 			$this->id = $data['id'];
 		}
 	}
-
+	/**
+	*	Fonction du Delete du CRUD pour les Utilisateurs
+	*	Supprime l'élément correspondant à l'id dans la table
+	*/
 	public function delUser($id){
 
 		$sql = "DELETE FROM users WHERE id = '".$id."'";
@@ -133,6 +147,10 @@ class Model{
 		//die($sql);
 		$pre->execute();
 	}
+	/**
+	*	Fonction du Delete du CRUD pour les QRCcodes des Utilisateurs
+	*	Supprime l'élément correspondant à l'id dans la table
+	*/
 	public function delUserQRcodes($id){
 
 		$sql = "DELETE FROM myqrcodes WHERE user= '".$id."'";
@@ -140,6 +158,10 @@ class Model{
 		//die($sql);
 		$pre->execute();
 	}
+	/**
+	*	Fonction du Delete du CRUD pour un QRCode
+	*	Supprime l'élément correspondant à l'id dans la table
+	*/
 	public function delOneQRcode($id){
 
 		$sql = "DELETE FROM myqrcodes WHERE id = '".$id."'";

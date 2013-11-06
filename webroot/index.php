@@ -1,4 +1,6 @@
 <?php
+/** 	@author : Laurent Khoudja - laurentkh@gmail.com - M2 PSM - UFR STGI
+*/
 //SESSION
 session_start();
 
