@@ -40,7 +40,7 @@
 				<div class="col-lg-6">
 					<div class="container">
 						<h4>Message :</h4>
-						<p class="blue"><?=$value->message?></p>
+						<p class="blue"><?=nl2br($value->message)?></p>
 						<hr />
 					</div>
 		 		</div>
