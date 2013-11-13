@@ -52,7 +52,7 @@ class GenerateqrcodeController extends Controller{
 				}
 			}
 		// Nous ajoutons à $this->vars les variables à envoyer à la vue
-		// envoi des variables pour la gestions des menus actifs
+		// Nous définissons le menu actif
 		$this->set(array(
 			'pageAccueil'=>'',
 			'pageInscription'=>'',

@@ -30,7 +30,7 @@ class SignupController extends Controller{
 		}
 		//die(print_r($_POST));
 
-		// Nous ajoutons à $this->vars les variables à envoyer à la vue
+		// Nous définissons le menu actif
 		$this->set(array(
 			'pageAccueil'=>'',
 			'pageInscription'=>'active',

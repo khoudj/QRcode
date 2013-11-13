@@ -1,8 +1,7 @@
  <?php
 /**
-*	La classe Controller servira de controleur général
-* 	index() est le point d'entrée de l'application 
-*
+*	La classe AccueilController hérite du controleur général
+*	Controlleur envoyé par défaut dans le layout principal
 *	@author : Laurent Khoudja - laurentkh@gmail.com - M2 PSM - UFR STGI
 */
 class AccueilController extends Controller{

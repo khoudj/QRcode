@@ -1,11 +1,17 @@
  <?php
 /**
-*	La classe Controller servira de controleur général
+*	La classe ProfilController servira de controleur pour l'affichage des profils user
 *
 *	@author : Laurent Khoudja - laurentkh@gmail.com - M2 PSM - UFR STGI
 */
 class ProfilController extends Controller{
-
+	/**
+	*
+	*
+	*
+	*
+	*
+	*/
 	function index(){
 		$this->loadModel('User');
 		$this->loadModel('Myqrcode');
@@ -54,7 +60,7 @@ class ProfilController extends Controller{
 				// envoi des variables à la vue
 				$this->set(array('alert'=>$alert));
 				$this->set(array('user'=>$user));
-				// Nous ajoutons à $this->vars les variables à envoyer à la vue
+				// Nous définissons le menu actif
 				$this->set(array(
 					'pageAccueil'=>'',
 					'pageInscription'=>'',
@@ -107,7 +113,7 @@ class ProfilController extends Controller{
 				//die(print_r($user));
 
 				$this->set(array('user'=>$user));
-				// Nous ajoutons à $this->vars les variables à envoyer à la vue
+				// Nous définissons le menu actif
 				$this->set(array(
 					'pageAccueil'=>'',
 					'pageInscription'=>'',

@@ -1,14 +1,17 @@
  <?php
 /**
-*	La classe Controller servira de controleur général
+*	La classe ContactController servira de controleur pour le contact du site
 *
 *	@author : Laurent Khoudja - laurentkh@gmail.com - M2 PSM - UFR STGI
 */
 class ContactController extends Controller{
-
+	/**
+	*	Fonction qui définit les variables de la page 
+	*	et rend la vue
+	*/
 	function index(){
 
-		// Nous ajoutons à $this->vars les variables à envoyer à la vue
+		// Nous définissons le menu actif
 		$this->set(array(
 			'pageAccueil'=>'',
 			'pageInscription'=>'',
@@ -17,6 +20,7 @@ class ContactController extends Controller{
 			'pageQrcode'=>'',
 			'pageProfil'=>'')
 		);
+		// redu de la vue
 		$this->render('index');
 	}
 }	

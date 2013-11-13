@@ -1,10 +1,14 @@
  <?php
 /**
-*	La classe Controller servira de controleur général
+*	La classe MyqrcodeController servira de controleur pour gérer mes qrcode
 *
 *	@author : Laurent Khoudja - laurentkh@gmail.com - M2 PSM - UFR STGI
 */
 class MyqrcodeController extends Controller{
+	/**
+	*	Fonction qui définit les variables de la page 
+	*	et rend la vue
+	*/
 	function index(){
 
 		// Création de l'ordre de classement par defaut
@@ -31,7 +35,7 @@ class MyqrcodeController extends Controller{
 			'condition'=>'user = "'.$_SESSION['user']['id'].'"',
 			'order'=>$order)
 		);
-		// Nous ajoutons à $this->vars les variables à envoyer à la vue
+		// Nous définissons le menu actif
 		$this->set(array(
 			'pageAccueil'=>'',
 			'pageInscription'=>'',
@@ -48,7 +52,10 @@ class MyqrcodeController extends Controller{
 		$this->render('index');
 		
 	}
-
+	/**
+	*	Fonction gérant la suppression de qrcode  
+	*	et rend la vue
+	*/
 	function supprimerqrcode($id){
 		
 		$this->loadModel('Myqrcode');
@@ -135,7 +142,7 @@ class MyqrcodeController extends Controller{
 				}
 			}
 		// Nous ajoutons à $this->vars les variables à envoyer à la vue
-		// envoi des variables pour la gestions des menus actifs
+		/// Nous définissons le menu actif
 		$this->set(array(
 			'pageAccueil'=>'',
 			'pageInscription'=>'',
@@ -146,10 +153,6 @@ class MyqrcodeController extends Controller{
 		);
 		// Nous faisons un rendu de la vue index
 		$this->render('index');
-
-
-
-		/////////////////////////
 		
 		$this->loadModel('Myqrcode');
 		$this->Myqrcode->save($id);

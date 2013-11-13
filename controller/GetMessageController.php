@@ -22,7 +22,7 @@ class GetMessageController extends Controller{
 		$myqrcode = $this->Myqrcode->find(array(
 			'condition'=>'user = "'.$_SESSION['user']['id'].'"')
 		);
-		// Nous ajoutons à $this->vars les variables à envoyer à la vue
+		// Nous définissons le menu actif
 		$this->set(array(
 			'pageAccueil'=>'',
 			'pageInscription'=>'',
