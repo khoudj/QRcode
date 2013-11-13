@@ -61,10 +61,7 @@
 	</div>
 	<div class="col-lg-6">
 	          <h2>Comment faire ?</h2>
-	          <p> Le U-code de Heineken : un QR code utilisé lors d'un festival de musique pour "briser la glace".
-	Le Heineken Open'er Festival est un festival de musique qui a lieu sur la côte nord de la Pologne. L'organisateur principal du festival, l'agence de concert Alter Art, s'appuie depuis le début (2002) sur l'engagement de la célèbre marque de bière comme sponsor principal.
-	L'édition 2011 s'est tenue du 30 Juin au 3 Juillet. A cette occasion, Heinenken et l'agence de communication Leo Burnett Varsaw, ont monté une opération intitulée "Heineken U-Code".
-	Les jeunes viennent en concert pour écouter de la musique et vivre un moment festif, mais aussi pour rencontrer d'autres personnes. Pour cette raison, Leo Burnett a conçu et organisé une opération pour faciliter les rencontres. </p>
+	          <p> m Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, animi, necessitatibus, a autem quaerat suscipit dolorem perspiciatis odio ea facere perferendis quo deleniti ipsam in ducimus optio quas doloremque aliquam.consectetur adipisicing elit. Reprehenderit, temporibus, harum error similique odit ad omnis praesentium autem aperiam est veniam quod doloribus fuga? Nesciunt, ex optio perferendis illo cumque!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, soluta, aliquam, ipsam voluptatum laborum natus magnam saepe necessitatibus maxime repudiandae aspernatur provident doloremque porro eum eos explicabo enim. Esse, rem.</p>
 	          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
 	</div>
 </div>

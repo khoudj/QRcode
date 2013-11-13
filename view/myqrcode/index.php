@@ -29,7 +29,7 @@
 		<div class="panel panel-default">
 		  <div class="panel-heading">
 		    <h2 class="panel-title text-left col-md-6 blue"><?=$value->title?></h2>
-			<h3 class="panel-title text-right .col-md-6 grey"><?='Crée le '.DateFormat::format($value->created)?><? if($value->modified) echo '<span class="pipeDate">|</span>Modifié le '.DateFormat::format($value->modified); ?></h3>
+			<h3 class="panel-title text-right grey"><?='Crée le '.DateFormat::format($value->created)?><? if($value->modified) echo '<span class="pipeDate">|</span>Modifié le '.DateFormat::format($value->modified); ?></h3>
 		  </div>
 		  <div class="panel-body">
 		  	<div class="col-lg-6">
@@ -38,16 +38,14 @@
 					<!-- Liens acction sur QRCode -->
 				</div>
 				<div class="col-lg-6">
-					<div class="form-group">
-						<label for="updateTitle<?=$i?>">Modifications du titre</label>
-		    			<input type="text" class="form-control" id="updateTitle<?=$i?>" name="updateTitle[<?=$i?>]" value="<?=$value->title?>" maxlength="50"/>
-				 		<label for="updateMessage<?=$i?>">Modifications du message</label>
-		    			<textarea class="form-control" id="updateMessage<?=$i?>" name="updateMessage[<?=$i?>]" rows="10" maxlength="250"><?=$value->message?></textarea>
-			 		</div>
+					<div class="container">
+						<h4>Message :</h4>
+						<p class="blue"><?=$value->message?></p>
+						<hr />
+					</div>
 		 		</div>
 		  </div>
 		  <div class="panel-footer">
-		    <a class="btn btn-success btn-small maringLeft2em" href="<?=BASE_URL.DS?>myqrcode/modifierqrcode/<?=$value->id?>" title="Modifier"><span class="glyphicon glyphicon-pencil btn-lg margin-off padding-off"></span></a>
 		  	<a class="btn btn-primary btn-small maringLeft1em" href="<?php echo BASE_URL.DS.'img'.DS.'qrcode.php?msg='.base64_encode($value->message); ?>" target="_blank" title="imprimer"><span class="glyphicon glyphicon-print btn-lg margin-off padding-off"></span> </a>
 			<a class="btn btn-danger btn-small maringLeft1em" href="<?=BASE_URL.DS?>myqrcode/supprimerqrcode/<?=$value->id?>" title="Supprimer"><span class="glyphicon glyphicon-trash btn-lg margin-off padding-off"></span> </a>
 

@@ -49,7 +49,7 @@
                 <input type="text" placeholder="Email" class="form-control" value='laurent@ufr.fr' name='login'>
               </div>
               <div class="form-group">
-                <input type="password" placeholder="Password" class="form-control"  value='aaaaaaaaa' name='password'>
+                <input type="password" placeholder="Password" class="form-control"  value='azertyuiop' name='password'>
               </div>
               <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-log-out btn-lg padding-off"></span></button>
               </form>
