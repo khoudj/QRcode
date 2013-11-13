@@ -1,0 +1,49 @@
+-- phpMyAdmin SQL Dump
+-- version 3.5.7
+-- http://www.phpmyadmin.net
+--
+-- Client: localhost
+-- Généré le: Mer 13 Novembre 2013 à 15:24
+-- Version du serveur: 5.5.29
+-- Version de PHP: 5.4.10
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Base de données: `qrcode`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `myqrcodes`
+--
+
+CREATE TABLE `myqrcodes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) NOT NULL,
+  `message` varchar(250) DEFAULT NULL,
+  `user` int(11) DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  `nbview` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `password` varchar(200) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `profil` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
